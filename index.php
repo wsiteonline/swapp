@@ -3,7 +3,7 @@
 
     
     $allowed_countries = array('Mexico', 'Guatemala', 'Honduras','El Salvador','Salvador','Ecuador', 'Panama', 'Peru', 'Costa Rica'); 
-    $user_ip = $_SERVER['REMOTE_ADDR'];
+    $user_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
     $geo = json_decode(file_get_contents("http://ip-api.com/json/{$user_ip}"));
     $country = $geo->country;
 
